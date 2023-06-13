@@ -1,0 +1,23 @@
+{
+  "name": "dulceria",
+  "version": "1.0.0",
+  "description": "proyecto de dulceria",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seden0/Dulceria.git"
+  },
+  "author": "marlen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Seden0/Dulceria/issues"
+  },
+  "homepage": "https://github.com/Seden0/Dulceria#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "firebase-tools": "^12.3.1"
+  }
+}
