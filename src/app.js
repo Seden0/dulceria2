@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(require('./routes/index'));
 app.use(require('./routes/users'));
 app.use(require('./routes/login'));
-//app.use(require('./routes/signup'));
+app.use(require('./routes/signup'));
 //app.use(require('./routes/auth'));
 //app.use(require('./routes/resetPassw'));
 ///app.use(require('./routes/history-entry-exit'));
