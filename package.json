@@ -4,7 +4,9 @@
   "description": "proyecto de dulceria",
   "main": "src/index.js",
   "scripts": {
-    "test": "node ."
+    "test": "node .",
+    "dev": "nodemon src/index.js",
+    "tests": "npx mocha src/test/main.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,22 @@
   },
   "homepage": "https://github.com/Seden0/Dulceria#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "bootstrap": "^5.3.0",
-    "firebase-tools": "^12.3.1"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase": "^10.0.0",
+    "firebase-admin": "^11.10.1",
+    "firebase-tools": "^12.3.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.4.0",
+    "esm": "^3.2.25",
+    "jest": "^29.6.1",
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.1"
   }
 }
