@@ -10,7 +10,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use(require('./routes/index'));
+app.use(require('./routes/products'));
 app.use(require('./routes/users'));
 //app.use(require('./routes/login'));
 //app.use(require('./routes/signup'));
