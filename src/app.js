@@ -12,14 +12,5 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(require('./routes/index'));
 app.use(require('./routes/users'));
-//app.use(require('./routes/login'));
-//app.use(require('./routes/signup'));
-//app.use(require('./routes/resetPassw'));
-///app.use(require('./routes/history-entry-exit'));
-///app.use(require('./routes/entry-products'));
-//app.use(require('./routes/exit-products'));
-//app.use(require('./routes/search'));
-
-//app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = app;
