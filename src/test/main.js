@@ -1,1 +1,1 @@
-require('./mainTests');
+require('./test_Crud_Products');
