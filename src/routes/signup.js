@@ -15,7 +15,7 @@ router.post('/signup', async (req, res) => {
       // Envía una respuesta con los detalles del usuario creado
       res.status(200).json({ message: 'Usuario creado exitosamente', user: userRecord });
     } catch (error) {
-      //Aqui podremos ver los Manejos de errores
+      //Aqui podremos ver los Manejo de errores
       res.status(500).json({ error: 'Error al crear el usuario', details: error.message });
     }
   });

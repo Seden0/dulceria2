@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
       // Respuesta del inicio de sesión fue exitoso
       res.status(200).json({ message: 'Inicio de sesión exitoso' });
     } catch (error) {
-      //Aqui encontraremos los Manejos de errores
+      // Manejo de errores
       res.status(401).json({ error: 'Credenciales inválidas' });
     }
   });
