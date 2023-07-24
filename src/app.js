@@ -15,7 +15,7 @@ app.use(require('./routes/users'));
 app.use(require('./routes/login'));
 app.use(require('./routes/signup'));
 //app.use(require('./routes/auth'));
-//app.use(require('./routes/resetPassw'));
+//app.use(require('./routes/resetPassword'));
 ///app.use(require('./routes/history-entry-exit'));
 ///app.use(require('./routes/entry-products'));
 //app.use(require('./routes/exit-products'));
