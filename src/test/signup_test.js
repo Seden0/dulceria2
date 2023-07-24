@@ -1,13 +1,10 @@
-
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 const { log } = require('console');
 const expect = require('chai').expect;
 
-
 chai.use(chaiHttp);
 const url= 'http://localhost:4000';
-
 
 //Y 
 describe('Signup',()=>{
