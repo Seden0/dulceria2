@@ -1,5 +1,5 @@
 const chai = require('chai');
-const main = require('./main');
+const main = require('.');
 const expect = chai.expect;
 const {db} = require('../firebase');
 const firebase = require('firebase/app');
@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 
 //Acccesedemos a la url declaramos una constante
 const url = 'http://localhost:4000';
-const products = require('../routes/products');
+//const products = require('../routes/index');
 
 describe('Prueba Get', () => {
     it('Debe obtener todos los productos', (done) => {
