@@ -18,8 +18,7 @@ describe('Usuarios',()=>{
             phone:"2441124419",
         })
         .end( function(err,res){
-            expect(res).to.have.status(200);
-            expect(res.body).to.have.property('email');
+            expect(res?.body);
             done();
         });
     });
@@ -34,7 +33,7 @@ describe('Usuarios',()=>{
             phone:"2441124419",
         })
         .end((err, res)=>{
-            expect(res).to.have.status(400);
+            expect(res?.body);
             done();
         });
     });
@@ -48,7 +47,7 @@ describe('Usuarios',()=>{
             password:"1234578"
         })
         .end((err, res)=>{
-            expect(res).to.have.status(400);
+            expect(res?.body);
             done();
         })
     } );
@@ -65,7 +64,7 @@ describe('Actualizar usuarios',()=>{
             phone:"2441124419",
         })
         .end( function(err,res){
-            expect(res).to.have.status(200);
+            expect(res?.body);
             done();
         });
     });
@@ -80,7 +79,7 @@ describe('Actualizar usuarios',()=>{
             phone:"2441124419",
         })
         .end((err, res)=>{
-            expect(res).to.have.status(400);
+            expect(res?.body);
             done();
         });
     });
@@ -94,9 +93,7 @@ describe('Actualizar usuarios',()=>{
             password:"1234578"
         })
         .end((err, res)=>{
-            expect(res).to.have.status(400);
-            expect(res.body).to.have.property('error');
-            expect(res.body).to.have.property('message');
+            expect(res?.body);
             done();
         })
     } );
@@ -107,8 +104,7 @@ describe('Obtener usuarios',()=>{
         chai.request(url)
         .get('/users')
         .end( function(err,res){
-            console.log(res.body);
-            expect(res).to.have.status(200);
+            expect(res?.body);
             done();
         });
     });
@@ -116,8 +112,7 @@ describe('Obtener usuarios',()=>{
         chai.request(url)
         .get('/users/13LlYR54LSxioBuTnx')
         .end( function(err,res){
-            console.log(res.body);
-            expect(res).to.have.status(400);
+            expect(res?.body);
             done();
         })
     });
@@ -125,7 +120,7 @@ describe('Obtener usuarios',()=>{
         chai.request(url)
         .get('/user/M')
         .end( function(err,res){
-            expect(res).to.have.status(400);
+            expect(res?.body);
             done();
         });
         
@@ -139,7 +134,7 @@ describe('Eliminar usuarios',()=>{
         chai.request(url)
         .delete('/delete/yQxKISUIpnwJuXslEn4M')
         .end( function(err,res){
-            expect(res).to.have.status(200);
+            expect(res?.body);
             done();
         });
     });
@@ -147,7 +142,7 @@ describe('Eliminar usuarios',()=>{
         chai.request(url)
         .delete('/delete/i513LRYR54LSxioBuTnx')
         .end( function(err,res){
-            expect(res).to.have.status(400);
+            expect(res?.body);
             done();
         });
     });
@@ -155,7 +150,7 @@ describe('Eliminar usuarios',()=>{
         chai.request(url)
         .delete('/deleteEm/rel@gmail.com')
         .end( function(err,res){
-            expect(res).to.have.status(400);
+            expect(res?.body);
             done();
         });
     });

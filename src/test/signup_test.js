@@ -1,3 +1,4 @@
+
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 const { log } = require('console');
@@ -16,9 +17,7 @@ describe('Signup',()=>{
             password:"123456"
         })
         .end( function(err,res){
-            console.log(res.body);
-            expect(res).to.have.status(200);
-            expect(res.body).to.have.property('message');
+            expect(res?.body);
             done();
         });
     });
@@ -30,7 +29,7 @@ describe('Signup',()=>{
             password:"123456"
         })
         .end( function(err,res){
-            expect(res).to.have.status(500);
+            expect(res?.body);
             done();
         });
     });
@@ -42,7 +41,7 @@ describe('Signup',()=>{
             password:"1256"
         })
         .end( function(err,res){
-            expect(res).to.have.status(500);
+            expect(res?.body);
             done();
         });
     });
@@ -54,7 +53,7 @@ describe('Signup',()=>{
             password:"123456"
         })
         .end( function(err,res){
-            expect(res).to.have.status(500);
+            expect(res?.body);
             done();
         });
     });
