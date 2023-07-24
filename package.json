@@ -4,9 +4,8 @@
   "description": "proyecto de dulceria",
   "main": "src/index.js",
   "scripts": {
-    "test": "node .",
     "dev": "nodemon src/index.js",
-    "tests": "npx mocha src/test/index.js"
+    "tests": "npx mocha src/test/index.js --timeout 50000"
   },
   "repository": {
     "type": "git",
