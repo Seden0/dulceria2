@@ -1,5 +1,4 @@
 const chai = require('chai');
-const main = require('.');
 const expect = chai.expect;
 const {db} = require('../firebase');
 const firebase = require('firebase/app');
