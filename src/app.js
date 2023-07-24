@@ -12,5 +12,6 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(require('./routes/index'));
 app.use(require('./routes/users'));
+app.use(require('./routes/signup'));
 
 module.exports = app;
