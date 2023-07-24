@@ -19,11 +19,7 @@ router.get('/users/:id', async(req, res)=>{
         const doc = await cityRef.get();
 
         if (!doc.exists) {
-            res.status(400).json({
-                error:true,
-                message:"Ocurrio un error al procesar",
-        
-            });
+            res.status(400).json({ error: 'Error al crear el usuario', details: error.message });
           } else {
             console.log('Document data:', res.json(doc.data()));
           }
