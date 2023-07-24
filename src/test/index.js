@@ -1,3 +1,2 @@
-require('./user_test');
-require('./signup_test');
-require('./testProducts');
+
+require('./test_products');
