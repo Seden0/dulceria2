@@ -31,4 +31,17 @@ describe('Recuperación de contraseña', () => {
         done();
       });
   });
+  it('Debe retornar error cuando el correo no sea valido', (done) => {
+    chai.request(url)
+    .post('/reset-password')
+    .send({
+        email:"ema@com",
+        password:"123456"
+    })
+    .end( function(err,res){
+        res?.should.have.status(404);
+        done();
+    });
 });
+});
+  

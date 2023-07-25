@@ -8,7 +8,7 @@ chai.should();
 const url= 'http://localhost:4000';
 
 describe('Login',()=>{
-    it('Debe iniciar sesion de un usuario', (done) => {
+    it('Debe iniciar sesion un usuario', (done) => {
         chai.request(url)
         .post('/login')
         .send({
@@ -32,7 +32,7 @@ describe('Login',()=>{
             done();
         });
     });
-    it('Debe retornar error cuando la contraseña no cumpla los requisitos', (done) => {
+    it('Debe retornar error si no cumple los requisitos', (done) => {
         chai.request(url)
         .post('/login')
         .send({
