@@ -1,10 +1,10 @@
-
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 const { log } = require('console');
 const expect = require('chai').expect;
 
 chai.use(chaiHttp);
+chai.should();
 const url= 'http://localhost:4000';
 
 //Y 
@@ -17,7 +17,7 @@ describe('Signup',()=>{
             password:"123456"
         })
         .end( function(err,res){
-            expect(res?.body);
+            res?.should.have.status(200);
             done();
         });
     });
@@ -29,7 +29,7 @@ describe('Signup',()=>{
             password:"123456"
         })
         .end( function(err,res){
-            expect(res?.body);
+            res?.should.have.status(500);
             done();
         });
     });
@@ -41,7 +41,7 @@ describe('Signup',()=>{
             password:"1256"
         })
         .end( function(err,res){
-            expect(res?.body);
+            res?.should.have.status(500);
             done();
         });
     });
@@ -53,7 +53,7 @@ describe('Signup',()=>{
             password:"123456"
         })
         .end( function(err,res){
-            expect(res?.body);
+            res?.should.have.status(500);
             done();
         });
     });

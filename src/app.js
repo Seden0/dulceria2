@@ -14,7 +14,8 @@ app.use(require('./routes/index'));
 app.use(require('./routes/users'));
 app.use(require('./routes/login'))
 app.use(require('./routes/signup'));
-//app.use(require('./routes/resetPassw'));
+//app.use(require('./routes/resetPass/index'));
+app.use(require('./routes/resetPassword'));
 
 //app.use(express.static(path.join(__dirname, 'public')));
 
