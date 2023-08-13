@@ -1,41 +1,44 @@
 const {Router}= require('express');
 const admin = require('firebase-admin');
 const nodemailer = require('nodemailer');
+const firebase = require('../firebase');
 
 const router = Router();
 
-// Configuración del transporte de correo
+ // Configurar el transportador de nodemailer
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'gmail', // Puedes usar otros servicios de correo electrónico o configurar uno propio
   auth: {
     user: 'carlos.enrique.3em@gmail.com',
-    pass: ''
+    pass: 'nehgkbnokhxnkcje'
   }
 });
 
-const email = 'carlos@gmail.com';
+// Ruta para enviar el correo de recuperación de contraseña
+router.post('/reset-password', async (req, res) => {
+  const { email } = req.body;
 
-admin.auth().generatePasswordResetLink(email)
-  .then((link) => {
-    // Configuración del mensaje de correo electrónico
-    const mailOptions = {
+  try {
+    // Verificar si el correo está registrado en Firebase
+    const userRecord = await admin.auth().getUserByEmail(email);
+
+    // Generar token de restablecimiento de contraseña
+    const resetToken = await admin.auth().generatePasswordResetLink(email);
+
+    // Enviar el correo de restablecimiento de contraseña
+    await transporter.sendMail({
       from: 'carlos.enrique.3em@gmail.com',
       to: email,
-      subject: 'Restablecimiento de contraseña',
-      text: `Haz clic en el siguiente enlace para restablecer tu contraseña: ${link}`
-    };
-
-    // Envía el correo electrónico
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error('Error al enviar el correo electrónico:', error);
-      } else {
-        console.log('Correo electrónico enviado:', info.response);
-      }
+      subject: 'Recuperación de contraseña',
+      text: `Para restablecer tu contraseña, haz clic en el siguiente enlace: ${resetToken}`,
     });
-  })
-  .catch((error) => {
-    console.error('Error al generar el enlace de restablecimiento de contraseña:', error);
-  });
+
+    res.status(200).json({ message: 'Correo enviado con éxito' });
+
+    console.log();
+  } catch (error) {
+    return res.status(404).json({ error: 'Correo no registrado' });
+  }
+});
 
 module.exports = router;

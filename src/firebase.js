@@ -1,18 +1,18 @@
 require('dotenv').config()
 
-const admin = require("firebase-admin");
-const credentials = require('../firebase.json');
-
 const {initializeApp, applicationDefault} = require ('firebase-admin/app');
 const {getFirestore} = require('firebase-admin/firestore');
 
-admin.initializeApp({
-    credential: admin.credential.cert(credentials),
-    databaseURL: "https://pbdc-10963-default-rtdb.firebaseio.com",
+const {getAuth}=require("firebase-admin/auth");
+
+initializeApp({
+    credential: applicationDefault(),
 });
 
-const db = getFirestore();
+const db= getFirestore();
+const admin=getAuth();
 
 module.exports = {
     db,
-}
+    admin,
+};
