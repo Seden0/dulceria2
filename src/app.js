@@ -17,6 +17,6 @@ app.use(require('./routes/signup'));
 //app.use(require('./routes/resetPass/index'));
 app.use(require('./routes/resetPassword'));
 
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = app;
