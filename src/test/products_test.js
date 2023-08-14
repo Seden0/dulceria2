@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 const url = 'http://localhost:4000';
 //const products = require('../routes/index');
 
-describe('Prueba Get', () => {
+describe('Prueba Get Products', () => {
     it('Debe obtener todos los productos', (done) => {
         chai.request(url)
           .get('/products')
@@ -40,7 +40,7 @@ describe('Prueba Get', () => {
       });
 });
 
-describe('Prueba Post', () => {
+describe('Prueba Post Products', () => {
     it('Debe agregar un producto', (done) => {
       chai.request(url)
       .post('/new-products')
@@ -74,7 +74,7 @@ describe('Prueba Post', () => {
     });
 });
 
-describe('Prueba Delete', () => {
+describe('Prueba Delete Products', () => {
   let productId;
     it('Debe eliminar un producto', (done) => {
       chai.request(url)
