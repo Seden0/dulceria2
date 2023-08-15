@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "test": "npx mocha src/test/index.js --timeout 50000"
+    "test": "npx mocha src/test/index.js --timeout 50000",
+    "build": "npm build",
   },
   "repository": {
     "type": "git",
