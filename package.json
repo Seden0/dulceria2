@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "proyecto de dulceria",
   "main": "src/index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "dev": "nodemon src/index.js",
     "test": "npx mocha src/test/index.js --timeout 50000",
